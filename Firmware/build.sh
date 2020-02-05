@@ -7,7 +7,7 @@ rm -rf ./Application/*
 
 cmake \
     -DCMAKE_TOOLCHAIN_FILE=../toolchain_STM32.cmake \
-    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_BUILD_TYPE=Release \
     ..
 
 cmake --build . -- -j 8

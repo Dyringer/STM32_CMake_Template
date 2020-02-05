@@ -19,9 +19,11 @@ int main(void)
     MX_GPIO_Init();
     MX_USART2_UART_Init();
     MX_I2C1_Init();
+    const SSD1306_size_t size = SSD1306_size_128x64;
+    ssd1306_init(size, screenBuffer);
+    graphics_init(ssd1306_setPixel, ssd1306_getPixel, 128, ssd1306_sizeToHeight(size));
 
-    ssd1306_init(SSD1306_size_128x64, screenBuffer);
-    graphics_init(ssd1306_setPixel, ssd1306_getPixel, 128, 64);
+    //ssd1306_fill(Graphics_color_white);
 
     graphics_drawString("beep", Graphics_color_white, Font_type_7x10,
                         Graphics_alignment_centeredScrren);
@@ -38,13 +40,6 @@ int main(void)
 
     graphics_drawString("right", Graphics_color_white, Font_type_7x10,
                         Graphics_alignment_right);
-
-    pos.x = 40;
-    pos.y += 12;
-    graphics_setPosition(pos);
-
-    graphics_drawString("centerPos", Graphics_color_white, Font_type_7x10,
-                        Graphics_alignment_centeredPos);
 
     ssd1306_updateScreen();
 
