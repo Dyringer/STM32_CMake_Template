@@ -49,7 +49,7 @@ set (ARCHFLAGS_C
 )
 
 set (ARCHFLAGS_CXX
-    "-std=gnu11 \
+    "-std=c++11 \
     -Wall \
     -Werror \
     -D_GNU_SOURCE \

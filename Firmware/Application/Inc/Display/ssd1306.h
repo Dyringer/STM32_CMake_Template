@@ -36,6 +36,7 @@ typedef enum SSD1306_size_s
 
 /* Exposed API ------------------------------------------------------------- */
 int ssd1306_init(SSD1306_size_t size, uint8_t * const scrrenBuffer);
+uint8_t ssd1306_sizeToHeight(SSD1306_size_t size);
 
 void ssd1306_setPixel(Graphics_position_t position, Graphics_color_t color);
 Graphics_color_t ssd1306_getPixel(Graphics_position_t position);
